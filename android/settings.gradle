@@ -1,0 +1,3 @@
+rootProject.name = 'Chatboard'
+
+include ':app'
