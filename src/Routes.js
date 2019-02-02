@@ -1,21 +1,17 @@
-import React from 'react';
-import { Drawer, Stack, Scene, Router } from "react-native-router-flux";
-import { connect } from "react-redux";
-
-import Home from './Components';
+import React, { Component } from 'react';
+import { Stack, Scene, Router } from "react-native-router-flux";
+import { Home } from './Components';
 
 class Routes extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
     render() { 
         return (
             <Router>
-                
+                <Stack key='root'>
+                    <Scene key='Home' component={Home}/>
+                </Stack>
             </Router>
         );
     }
 }
- 
+
 export default Routes;
