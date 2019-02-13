@@ -1,22 +1,18 @@
-import React, {Component} from 'react';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import Reducer from './Reducers';
-import Routes from './Routes';
+import React, { Component } from 'react'
+import { Stack, Scene, Router } from 'react-native-router-flux'
+import { Home, Episode } from './components'
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.enhancer = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-    this.store = createStore(Reducer, {}, this.enhancer);
-  }
-  render() { 
-    return (
-      <Provider store={this.store}>
-        <Routes />
-      </Provider>
-    );
-  }
+    render () {
+        return (
+            <Router>
+                <Stack key='root'>
+                    <Scene key='Home' component={Home}/>
+                    <Scene key='Episode' component={Episode}/>
+                </Stack>
+            </Router>
+        )
+    }
 }
- 
-export default App;
+
+export default App
