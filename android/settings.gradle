@@ -1,3 +1,3 @@
-rootProject.name = 'Chatboard'
+rootProject.name = 'fes'
 
 include ':app'

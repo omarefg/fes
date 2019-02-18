@@ -1,4 +1,4 @@
-package com.chatboard;
+package com.fes;
 
 import android.app.Application;
 
