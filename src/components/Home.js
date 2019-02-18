@@ -13,8 +13,11 @@ class Home extends Component {
         const season = Utils.getRandomInt(10)
         const episode = Utils.getRandomInt(seasons[season].episode_count)
         const wtw = await Utils.getEpisodeData(season, episode)
-        console.log(wtw)
-        Actions.Episode()
+        const episodeTitle = `Temporada ${wtw.season_number} / Episodio ${wtw.episode_number}`
+        this.props.changeTitle(episodeTitle)
+        Actions.Episode({
+            episode: wtw
+        })
     }
 
     async componentDidMount () {
@@ -23,17 +26,20 @@ class Home extends Component {
     }
 
     render () {
-        return (
-            <Welcome>
-                <Instructions
-                    text='¿Qué episodio de Friends debería ver?'
-                />
-                <Searcher
-                    title='Buscar'
-                    onPress={this.searchEpisode}
-                />
-            </Welcome>
-        )
+        if (this.state.data) {
+            return (
+                <Welcome>
+                    <Instructions
+                        text='Buscar un episodio'
+                    />
+                    <Searcher
+                        title='Buscar'
+                        onPress={this.searchEpisode}
+                    />
+                </Welcome>
+            )
+        }
+        return null
     }
 }
 

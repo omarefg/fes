@@ -1,11 +1,14 @@
 import React from 'react'
-import { View } from 'react-native'
+import { ScrollView } from 'react-native'
+import Styles from './styles'
 
 const Welcome = props => {
     return (
-        <View>
+        <ScrollView
+            contentContainerStyle={Styles.container}
+        >
             {props.children}
-        </View>
+        </ScrollView>
     )
 }
 

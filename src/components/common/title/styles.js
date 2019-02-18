@@ -2,9 +2,11 @@ import { StyleSheet } from 'react-native'
 
 const Styles = StyleSheet.create({
     container: {
-        flexDirection: 'column',
-        justifyContent: 'space-around',
-        flexGrow: 1
+        padding: 8
+    },
+    text: {
+        fontSize: 24,
+        marginBottom: 10
     }
 })
 

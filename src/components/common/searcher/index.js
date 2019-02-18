@@ -1,11 +1,17 @@
 import React from 'react'
-import { Button } from 'react-native'
+import { TouchableOpacity, View, Text } from 'react-native'
+import Styles from './styles'
 
 const Searcher = props => {
     return (
-        <Button
-            {...props}
-        />
+        <TouchableOpacity
+            onPress={props.onPress}
+            style={Styles.touchable}
+        >
+            <View style={Styles.container}>
+                <Text style={Styles.text}>Buscar</Text>
+            </View>
+        </TouchableOpacity>
     )
 }
 
